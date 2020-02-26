@@ -11,6 +11,8 @@
 		4CA93DB92406CBD3008541FA /* libabsl_strtod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA93DB82406CBD3008541FA /* libabsl_strtod.a */; };
 		4CA93DBB2406CEF1008541FA /* canada.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CA93DBA2406CD3A008541FA /* canada.txt */; };
 		4CA93DBE2406D392008541FA /* simdjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA93DBC2406D392008541FA /* simdjson.cpp */; };
+		4CA93DC22406FA2A008541FA /* libfolly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA93DC12406FA2A008541FA /* libfolly.a */; };
+		4CA93DC42406FB3E008541FA /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA93DC32406FB3E008541FA /* libdouble-conversion.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +35,8 @@
 		4CA93DBA2406CD3A008541FA /* canada.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = canada.txt; sourceTree = "<group>"; };
 		4CA93DBC2406D392008541FA /* simdjson.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simdjson.cpp; sourceTree = "<group>"; };
 		4CA93DBD2406D392008541FA /* simdjson.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = simdjson.hpp; sourceTree = "<group>"; };
+		4CA93DC12406FA2A008541FA /* libfolly.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfolly.a; path = ../../../../../usr/local/lib/libfolly.a; sourceTree = "<group>"; };
+		4CA93DC32406FB3E008541FA /* libdouble-conversion.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libdouble-conversion.a"; path = "../../../../../usr/local/lib/libdouble-conversion.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA93DC22406FA2A008541FA /* libfolly.a in Frameworks */,
+				4CA93DC42406FB3E008541FA /* libdouble-conversion.a in Frameworks */,
 				4CA93DB92406CBD3008541FA /* libabsl_strtod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,8 +72,10 @@
 		4CA93DB02406CB76008541FA /* strtodComp */ = {
 			isa = PBXGroup;
 			children = (
+				4CA93DC12406FA2A008541FA /* libfolly.a */,
 				4CA93DB12406CB76008541FA /* main.cpp */,
 				4CA93DBA2406CD3A008541FA /* canada.txt */,
+				4CA93DC32406FB3E008541FA /* libdouble-conversion.a */,
 				4CA93DB82406CBD3008541FA /* libabsl_strtod.a */,
 				4CA93DBC2406D392008541FA /* simdjson.cpp */,
 				4CA93DBD2406D392008541FA /* simdjson.hpp */,
@@ -196,6 +204,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Debug;
 		};
@@ -249,6 +258,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Release;
 		};
@@ -262,6 +272,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/strtodComp",
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -277,6 +288,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/strtodComp",
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
